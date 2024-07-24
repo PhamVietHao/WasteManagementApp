@@ -5,32 +5,229 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_green"
     tools:context=".MainActivity">
 
+    <!-- Background Image -->
+
+    <!-- App Name -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.7"
+        android:scaleType="fitXY"
+        android:src="@drawable/landing_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
+        android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
+        android:textColor="@color/dark_green"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/my_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintVertical_bias="0.032" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Let's Start"
-        android:backgroundTint="@color/dark_green"
-        android:textColor="@android:color/white"
+    <!-- Main Image -->
+    <ImageView
+        android:id="@+id/my_image"
+        android:layout_width="194dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/example_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
+
+    <TextView
+        android:id="@+id/main_image_paragraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Revolutionizing waste management with the power of IoT. Discover how our innovative solution uses sensors and data to optimize waste collection and create a cleaner future."
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_image" />
+
+    <!-- Team Name -->
+    <TextView
+        android:id="@+id/team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="We are TechTitans"
+        android:textColor="@color/dark_green"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/team_member_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_image"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintVertical_bias="0.574" />
+
+    <!-- Team Member Container -->
+    <LinearLayout
+        android:id="@+id/team_member_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/team_name"
+        app:layout_constraintBottom_toTopOf="@id/start_button"
+        android:layout_marginBottom="16dp">
+
+
+        <!-- Team Member 1 -->
+        <LinearLayout
+            android:id="@+id/team_member_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+
+            <ImageView
+                android:id="@+id/member_1_image"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                android:layout_margin="8dp"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/hao" />
+
+            <TextView
+                android:id="@+id/member_1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Hao"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/team_member_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/member_1_image"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hao" />
+
+            <TextView
+                android:id="@+id/member_2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Di"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/team_member_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/member_1_image"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hao" />
+
+            <TextView
+                android:id="@+id/member_3_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Hy"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/team_member_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/member_1_image"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hao" />
+
+            <TextView
+                android:id="@+id/member_4_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Khuong"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <!-- Add more team members here in a similar fashion -->
+
+    </LinearLayout>
+
+    <!-- Start Button -->
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="Let's Start"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="150dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/team_member_container"
+        app:layout_constraintHorizontal_bias="0.515" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
