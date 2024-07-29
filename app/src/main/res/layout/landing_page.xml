@@ -68,7 +68,7 @@
         android:id="@+id/team_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="90dp"
         android:text="We are TechTitans"
         android:textColor="@color/dark_green"
         android:textSize="18sp"
@@ -134,13 +134,13 @@
             android:layout_marginBottom="16dp">
 
             <ImageView
-                android:id="@+id/member_1_image"
+                android:id="@+id/member_2_image"
                 android:layout_width="66dp"
                 android:layout_height="69dp"
                 android:layout_margin="8dp"
                 android:layout_marginLeft="20dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/hao" />
+                android:src="@drawable/di" />
 
             <TextView
                 android:id="@+id/member_2_name"
@@ -162,13 +162,13 @@
             android:layout_marginBottom="16dp">
 
             <ImageView
-                android:id="@+id/member_1_image"
+                android:id="@+id/member_3_image"
                 android:layout_width="66dp"
                 android:layout_height="69dp"
                 android:layout_margin="8dp"
                 android:layout_marginLeft="20dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/hao" />
+                android:src="@drawable/hy" />
 
             <TextView
                 android:id="@+id/member_3_name"
@@ -190,13 +190,13 @@
             android:layout_marginBottom="16dp">
 
             <ImageView
-                android:id="@+id/member_1_image"
+                android:id="@+id/member_4_image"
                 android:layout_width="66dp"
                 android:layout_height="69dp"
                 android:layout_margin="8dp"
                 android:layout_marginLeft="20dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/hao" />
+                android:src="@drawable/khuong" />
 
             <TextView
                 android:id="@+id/member_4_name"

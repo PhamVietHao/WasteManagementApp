@@ -1,15 +1,18 @@
 package com.example.wastemanagementapp;
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GuideActivity extends AppCompatActivity {
 
     private TextView answer1;
+    private TextView answer2;
     private boolean isAnswerVisible = false;
 
     @Override
@@ -36,13 +39,51 @@ public class GuideActivity extends AppCompatActivity {
             }
         });
 
+        // Question 2
+        LinearLayout question2 = findViewById(R.id.question_2);
+        answer2 = findViewById(R.id.answer_2);
+        TextView questionTitle2 = findViewById(R.id.question_title_2);
+
+        question1.setOnClickListener(v -> {
+            if (!isAnswerVisible) {
+                answer2.setVisibility(View.VISIBLE);
+                answer2.setTranslationY(answer1.getHeight()); // Start below the view
+                answer2.animate().translationY(0).setDuration(300).start();
+                isAnswerVisible = true;
+            } else {
+                answer2.animate().translationY(answer2.getHeight()).setDuration(300).withEndAction(() -> {
+                    answer2.setVisibility(View.GONE);
+                    isAnswerVisible = false;
+                }).start();
+            }
+        });
+
         // Ensure height is measured before animation
-        answer1.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        answer2.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                answer1.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                answer1.setTranslationY(answer1.getHeight()); // Ensure start position is below
+                answer2.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                answer2.setTranslationY(answer2.getHeight()); // Ensure start position is below
             }
+        });
+
+        // Bottom navigation
+        Button navHome = findViewById(R.id.nav_home);
+        Button navBinPage = findViewById(R.id.nav_bin_page);
+        Button navGuidePage = findViewById(R.id.nav_guide_page);
+
+        navHome.setOnClickListener(v -> {
+            Intent intent = new Intent(GuideActivity.this, LandingPageActivity.class);
+            startActivity(intent);
+        });
+
+        navBinPage.setOnClickListener(v -> {
+            Intent intent = new Intent(GuideActivity.this, BinPageActivity.class);
+            startActivity(intent);
+        });
+
+        navGuidePage.setOnClickListener(v -> {
+            // We are already in GuideActivity, no need to start a new one
         });
     }
 }
