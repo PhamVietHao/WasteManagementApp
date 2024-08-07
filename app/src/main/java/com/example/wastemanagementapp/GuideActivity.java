@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Button;
@@ -68,9 +69,9 @@ public class GuideActivity extends AppCompatActivity {
         });
 
         // Bottom navigation
-        Button navHome = findViewById(R.id.nav_home);
-        Button navBinPage = findViewById(R.id.nav_bin_page);
-        Button navGuidePage = findViewById(R.id.nav_guide_page);
+        ImageButton navHome = findViewById(R.id.nav_home);
+        ImageButton navBinPage = findViewById(R.id.nav_bin_page);
+        ImageButton navGuidePage = findViewById(R.id.nav_guide_page);
 
         navHome.setOnClickListener(v -> {
             Intent intent = new Intent(GuideActivity.this, LandingPageActivity.class);

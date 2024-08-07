@@ -5,24 +5,35 @@
     android:orientation="horizontal"
     android:background="@android:color/darker_gray">
 
-    <Button
+    <ImageButton
         android:id="@+id/nav_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Home" />
+        android:src="@drawable/baseline_home_24"
+        android:contentDescription="@string/home"
+        android:background="?attr/selectableItemBackground"
+        android:minWidth="48dp"
+        android:minHeight="48dp"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/nav_bin_page"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Bin Page" />
+        android:src="@drawable/baseline_question_mark_24"
+        android:contentDescription="@string/bins"
+        android:minWidth="48dp"
+        android:minHeight="48dp"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/nav_guide_page"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Guide Page" />
+        android:src="@drawable/baseline_restore_from_trash_24"
+        android:contentDescription="@string/guide"
+        android:background="?attr/selectableItemBackground"
+        android:minWidth="48dp"
+        android:minHeight="48dp"/>
 </LinearLayout>
