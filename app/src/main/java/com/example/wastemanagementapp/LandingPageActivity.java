@@ -18,7 +18,7 @@ public class LandingPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate to GuideActivity
-                Intent intent = new Intent(LandingPageActivity.this, GuideActivity.class);
+                Intent intent = new Intent(LandingPageActivity.this, BinPageActivity.class);
                 startActivity(intent);
             }
         });

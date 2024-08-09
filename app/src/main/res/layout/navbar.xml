@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@android:color/darker_gray">
+    android:background="@android:color/darker_gray" >
 
     <ImageButton
         android:id="@+id/nav_home"
@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:src="@drawable/baseline_home_24"
         android:contentDescription="@string/home"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/nav_button_selector"
         android:minWidth="48dp"
         android:minHeight="48dp"/>
 
@@ -23,6 +23,7 @@
         android:layout_weight="1"
         android:src="@drawable/baseline_question_mark_24"
         android:contentDescription="@string/bins"
+        android:background="@drawable/nav_button_selector"
         android:minWidth="48dp"
         android:minHeight="48dp"/>
 
@@ -33,7 +34,7 @@
         android:layout_weight="1"
         android:src="@drawable/baseline_restore_from_trash_24"
         android:contentDescription="@string/guide"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/nav_button_selector"
         android:minWidth="48dp"
         android:minHeight="48dp"/>
 </LinearLayout>

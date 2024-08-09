@@ -16,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.ImageButton;
+import android.content.Intent;
+
 
 public class BinPageActivity extends AppCompatActivity {
     private RecyclerView binList;
@@ -33,7 +36,46 @@ public class BinPageActivity extends AppCompatActivity {
         List<Bin> bins = getSampleData();
         binAdapter = new BinAdapter(bins);
         binList.setAdapter(binAdapter);
+
+        ImageButton navHome = findViewById(R.id.nav_home);
+        ImageButton navBinPage = findViewById(R.id.nav_bin_page);
+        ImageButton navGuidePage = findViewById(R.id.nav_guide_page);
+
+        // Set the current page's button as selected
+        navHome.setSelected(false);
+        navBinPage.setSelected(true); // This is for BinPageActivity, so BinPage button should be selected
+        navGuidePage.setSelected(false);
+
+        navHome.setOnClickListener(v -> {
+
+            Intent intent = new Intent(BinPageActivity.this, LandingPageActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+
+            navHome.setSelected(true);
+            navBinPage.setSelected(false);
+            navGuidePage.setSelected(false);
+
+        });
+
+        navBinPage.setOnClickListener(v -> {
+            navHome.setSelected(false);
+            navBinPage.setSelected(true); // Ensure this button is selected
+            navGuidePage.setSelected(false);
+            // We are already in BinPageActivity, no need to start a new one
+        });
+
+        navGuidePage.setOnClickListener(v -> {
+            Intent intent = new Intent(BinPageActivity.this, GuideActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+            navHome.setSelected(false);
+            navBinPage.setSelected(true); // Ensure this button is selected
+            navGuidePage.setSelected(false);
+        });
     }
+
+
 
     private List<Bin> getSampleData() {
         List<Bin> bins = new ArrayList<>();
